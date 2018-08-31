@@ -82,7 +82,7 @@ var app = {
             a.open()
         })
         document.addEventListener("backbutton", this.onBackKeyDown.bind(this), false);
-        document.getElementById("iframe").style.height = window.innerHeight - 64 + "px";
+        document.getElementById("iframe").style.height = window.innerHeight - 110 + "px";
         xhr();
         document.body.style.animation = "showen 0.3s forwards";
     },

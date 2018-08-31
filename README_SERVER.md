@@ -6,8 +6,8 @@
    Execute command below.
 
 `sudo apt install apache2 php7.2-fpm mysql-server`<br>
-`sudo a2enconf proxy_fcgi `
-`sudo a2enconf php-fpm`
+`sudo a2enconf proxy_fcgi `<br>
+`sudo a2enconf php-fpm`<br>
 `sudo service apache2 restart`
 
 你会在安装时被要求设置mysql的密码，如果没有的话，请尝试mysql官方的安装包<br>
