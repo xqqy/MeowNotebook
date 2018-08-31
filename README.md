@@ -1,10 +1,10 @@
-#喵笔记本<br>Meow Notebook
+# 喵笔记本<br>Meow Notebook
 
 就是一个简单的云端笔记本，支持按照标题搜索和多用户管理<br>
 A simple notebook with cloud services, support search by title and mutil-user management.
 V0.1.1.1
 
-##配置服务端<br>Config server side
+## 配置服务端<br>Config server side
 
 安装php5.5或更高版本（目前仅在php7.2版本测试过，应该行吧）运行环境，启用hash、pdo（及您想使用的数据库的pdo扩展）<br>
 Install php5.5 or higher(I only tested at php7.2, but i think it should works), enable hash and pdo(also your database extensions)
@@ -15,7 +15,7 @@ For more information, see[How to config server](./README_SERVER.md)
 将根目录下Server文件夹内所有文件复制到你喜欢的一个文件夹下<br>
 Copy all document in server folder to where you wanted.
 
-##配置数据库<br>Config database
+## 配置数据库<br>Config database
 
 你可以选择你喜欢的数据库，只需要替换PDO代码即可<br>
 You can choose what database you like as you change PDO code.
@@ -57,7 +57,7 @@ HTML is the inner of a note.<br>
 我们在服务端预制了一个meowdb.db，向其中添加用户名即可<br>
 We have a meowdb.db for default, you can also use this for your database.
 
-##配置客户端<br>Config client side
+## 配置客户端<br>Config client side
 
 你需要Cordova环境<br>
 You need Cordova environment.
@@ -77,7 +77,7 @@ In default, Android and Web are enabled<br>
 使用`Cordova build 目标平台`即可<br>
 Use `Cordova build target` to build
 
-##文件说明<br>Documents
+## 文件说明<br>Documents
 /www/内为程序代码<br>
 Sources are in /www/<br>
 /Server/内为服务端<br>
@@ -87,7 +87,7 @@ meowdb.db is default database<br>
 其余为Apache Cordova自动生成文件<br>
 Others are Apache Cordova generated
 
-##未来开发规划<br>What next
+## 未来开发规划<br>What next
 1. 支持3个设备同时登录<br>
     Support 3 devices login at once.
 2. 可以通过网页端修改密码<br>

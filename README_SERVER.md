@@ -1,4 +1,4 @@
-#如何搭建一个网络服务器
+# 如何搭建一个网络服务器
 
 1. 下载Ubuntu Server<br>
     Download Ubuntu Server.
