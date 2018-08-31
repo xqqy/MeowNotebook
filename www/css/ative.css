@@ -1,0 +1,25 @@
+.button{
+    width:130px;
+    height:30px
+}
+.buttons {
+    position: absolute;
+    left: 0; right: 0; bottom: 0; 
+    width: 270; height: 30;
+    margin-left: auto;
+    margin-right: auto; 
+}
+@media screen and (max-width:500px) {
+    .button{
+        width:110px;
+        height:40px;
+        line-height: 20px
+    }
+    .buttons {
+        position: absolute;
+        left: 0; right: 0; bottom: 0; 
+        width: 230; height: 40;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+}

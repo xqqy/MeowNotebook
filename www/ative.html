@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="libs/materialize.min.css" rel="stylesheet">
+    <link href="libs/gicon.css" rel="stylesheet">
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/ative.css" rel="stylesheet">
+    <script src="cordova.js"></script>
+    <script src="libs/materialize.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="nav-extended light-blue">
+        <div class="nav-wrapper">
+            <span style="font-size: 30px;line-height: 2" class="material-icons" onclick="app.onBackKeyDown()">arrow_back</span>
+            <a href="#" class="brand-logo">
+                错题详情
+            </a>
+        </div>
+    </nav>
+    <div class="nav-content">
+        <iframe id="iframe" seamless sandbox="" style="width:100%;height:inherit;border:none"></iframe>
+        <div id="buttons" class="buttons">
+            <button class="waves-effect waves-light btn light-blue darken-2 button" onclick="mob()">修改</button>
+            <button class="waves-effect waves-light btn light-blue darken-2 button" id="del">删除</button>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>删除警告</h4>
+                <p style="color:red">确定吗？你还有最后一次机会！</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="del()">是的</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">不，不要</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="js/ative.js"></script>

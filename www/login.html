@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>登录</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="libs/materialize.min.css" rel="stylesheet">
+    <link href="libs/gicon.css" rel="stylesheet">
+    <script src="cordova.js"></script>
+    <script src="libs/materialize.min.js"></script>
+    <script src="js/login.js"></script>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col s12 m3" id="middle">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/welcome.jpg">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red">
+                        <i class="material-icons" id="login">send</i>
+                    </a>
+                    <div class="nav-content" id="loading">
+                        <div class="progress light-blue lighten-4">
+                            <div class="indeterminate light-blue darken-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <form action="javascript:login()">
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="UID" type="text" required="required">
+                                <label for="UID">用户名</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="PSWD" type="password" required="required">
+                                <label for="PSWD">密码</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
