@@ -15,25 +15,26 @@ try {
         die();
     }
 
-$userdb->exec("CREATE TABLE IF NOT EXISTS `users` (
-    `UID` varchar(255) NOT NULL COMMENT '用户ID',
-    `PSWD` varchar(255) NOT NULL COMMENT '密码',
-    `TOKEN` varchar(255) NOT NULL COMMENT '随机码',
-    `USERNAME` varchar(255) NOT NULL COMMENT '用户名',
-    PRIMARY KEY (`UID`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户表';
-  COMMIT;");
+    $userdb->exec('CREATE TABLE "users" (
+        `UID`	varchar(255) NOT NULL,
+        `PSWD`	varchar(255) NOT NULL,
+        `TOKEN1`	varchar(255),
+        `TOKEN2`	varchar(255),
+        `TOKEN3`	varchar(255),
+        `USERNAME`	varchar(255) NOT NULL,
+        PRIMARY KEY(`UID`)
+    )');
 //创建如果表不存在
 
 
 
-$user=$userdb->prepare("SELECT PSWD,USERNAME FROM users WHERE UID=?");
+$user=$userdb->prepare("SELECT PSWD,USERNAME,TOKEN1,TOKEN2 FROM users WHERE UID=?");//读取密码、用户名、token123
 if($user->execute(array($_POST['UID']))){
     
    if($row = $user->fetch()){
-        if(password_verify($_POST['PSWD'],$row['PSWD'])){
+        if(password_verify($_POST['PSWD'],$row['PSWD'])){//如果密码验证通过则发放TOKEN，并将之前的token向后移动
             $rand=sha1(mt_rand());
-            if(!$userdb->exec("UPDATE `users` SET `TOKEN`='".$rand."' WHERE UID='".$_POST['UID']."'")){
+            if(!$userdb->exec("UPDATE `users` SET `TOKEN1`='".$rand."',`TOKEN2`='".$row['TOKEN1']."',`TOKEN3`='".$row['TOKEN2']."' WHERE UID='".$_POST['UID']."'")){
                 die("数据库错误29");
             }
             echo "done/meow/".$rand.'/meow/'.$row['USERNAME'];

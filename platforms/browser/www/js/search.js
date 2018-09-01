@@ -113,7 +113,7 @@ var app = {
         }
     },
     ready: function () {
-        if (localStorage.getItem("firstrun") != "0.1.1.3") { //检测是否为第一次运行这个版本，如果是的话跳到初始化页面
+        if (localStorage.getItem("firstrun") != "0.1.2.1") { //检测是否为第一次运行这个版本，如果是的话跳到初始化页面
             loc("firstrun.html")
         }
         else if (!localStorage.getItem("uid")) {
@@ -127,7 +127,7 @@ var app = {
         document.body.style.animation = "showen 0.3s forwards";
         document.getElementById("username1").innerHTML = localStorage.getItem("name");
         document.getElementById("username2").innerHTML = localStorage.getItem("name");
-        if (!localStorage.getItem("helper") && localStorage.getItem("firstrun") == "0.1.1.3") { //弹出帮助
+        if (!localStorage.getItem("helper") && localStorage.getItem("firstrun") == "0.1.2.1") { //弹出帮助
             M.TapTarget.init(document.getElementById('helper'), {}).open();
             localStorage.setItem("helper", "done")
         }

@@ -77,6 +77,10 @@ function loc(lo) { //动画跳转
 
 function mob() { //提交更改
 	var data = new FormData();
+	if(document.getElementById("title").value=="" ||$('#summernote').summernote('code')==""){
+		dialogAlert("输入不能为空");
+		return;
+	}
 	data.append("UID", localStorage.getItem("uid"));
 	data.append("TOKEN", localStorage.getItem("token"));
 	data.append("TITLE", document.getElementById("title").value)

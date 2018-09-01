@@ -2,7 +2,7 @@
 
 就是一个简单的云端笔记本，支持按照标题搜索和多用户管理<br>
 A simple notebook with cloud services, support search by title and mutil-user management.
-V0.1.1.3
+V0.1.2.1
 
 ## 配置服务端<br>Config server side
 
@@ -22,19 +22,21 @@ You can choose what database you like as you change PDO code.
 
 首先创建一个users表，语句为<br>
 Create a table named "users",SQL:
-`CREATE TABLE `users` (
-    `UID` varchar(255) NOT NULL ,
-    `PSWD` varchar(255) NOT NULL ,
-    `TOKEN` varchar(255) NOT NULL ,
-    `USERNAME` varchar(255) NOT NULL,
-    PRIMARY KEY (`UID`)
-  )`<br>
+`CREATE TABLE "users" (
+	`UID`	varchar(255) NOT NULL,
+	`PSWD`	varchar(255) NOT NULL,
+	`TOKEN1`	varchar(255),
+	`TOKEN2`	varchar(255),
+	`TOKEN3`	varchar(255),
+	`USERNAME`	varchar(255) NOT NULL,
+	PRIMARY KEY(`UID`)
+)`<br>
 UID为用户ID，登录使用<br>
 UID is a user id, for login.<br>
 PSWD为使用PHP默认加密的密码，你可以通过password.php生成<br>
 PSWD is this user's password, using default php encrypt. You can get it by password.php<br>
-TOKEN为安全密钥<br>
-TOKEN is secure password, you needn't to do anything to this.<br>
+TOKEN1、TOKEN2、TOKEN3为安全密钥<br>
+TOKEN1、TOKEN2、TOKEN3 is secure password, you needn't to do anything to this.<br>
 USERNAME为用户名<br>
 USERNAME, is for user's name.<br>
 
