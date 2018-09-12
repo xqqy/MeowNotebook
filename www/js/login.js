@@ -63,7 +63,7 @@ var app = {
     // Application Constructor
     initialize: function () {
         document.addEventListener('DeviceReady', this.ready.bind(this), false);
-        if (localStorage.getItem("firstrun")!="0.1.2.1") {
+        if (localStorage.getItem("firstrun")!="0.1.2.2") {
             document.location="firstrun.html";
         }
     },

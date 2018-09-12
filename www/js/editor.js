@@ -2,7 +2,6 @@ var app = {
 	// Application Constructor
 	initialize: function () {
 		document.addEventListener('DeviceReady', this.ready.bind(this), false);
-
 	},
 	ready: function () {
 		if (sessionStorage.getItem("edit")) {

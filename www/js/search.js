@@ -6,7 +6,7 @@ worker.onmessage = function (e) {
     document.getElementById("list").innerHTML = e.data;
 }
 
-function getRootPath_dc() {//获取安装目录,通过navigator检测是否为安卓平台
+function getRootPath_dc() {//获取安装目录,通过协议检测是否为安卓平台
     if (window.location.protocol=="file:"){
         return "file:///android_asset/www"
     }else{
@@ -109,11 +109,11 @@ var app = {
     initialize: function () {
         document.addEventListener('DeviceReady', this.ready.bind(this), false);
         window.onresize = function () {
-            document.getElementById("search").style.width = document.body.clientWidth - 25 + "px";
+            document.getElementById("search").style.width = document.body.clientWidth - 41 + "px";
         }
     },
     ready: function () {
-        if (localStorage.getItem("firstrun") != "0.1.2.1") { //检测是否为第一次运行这个版本，如果是的话跳到初始化页面
+        if (localStorage.getItem("firstrun") != "0.1.2.2") { //检测是否为第一次运行这个版本，如果是的话跳到初始化页面
             loc("firstrun.html")
         }
         else if (!localStorage.getItem("uid")) {
@@ -123,11 +123,11 @@ var app = {
         }
         M.Sidenav.init(document.querySelectorAll('.sidenav'), {}); //初始化列表
         document.addEventListener("backbutton", this.onBackKeyDown.bind(this), false);
-        document.getElementById("search").style.width = document.body.clientWidth - 25 + "px"; //设置搜索按钮
+        document.getElementById("search").style.width = document.body.clientWidth - 41 + "px"; //设置搜索按钮
         document.body.style.animation = "showen 0.3s forwards";
         document.getElementById("username1").innerHTML = localStorage.getItem("name");
         document.getElementById("username2").innerHTML = localStorage.getItem("name");
-        if (!localStorage.getItem("helper") && localStorage.getItem("firstrun") == "0.1.2.1") { //弹出帮助
+        if (!localStorage.getItem("helper") && localStorage.getItem("firstrun") == "0.1.2.2") { //弹出帮助
             M.TapTarget.init(document.getElementById('helper'), {}).open();
             localStorage.setItem("helper", "done")
         }

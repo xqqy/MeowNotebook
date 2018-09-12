@@ -2,7 +2,7 @@
 
 就是一个简单的云端笔记本，支持按照标题搜索和多用户管理<br>
 A simple notebook with cloud services, support search by title and mutil-user management.
-V0.1.2.1
+V0.1.2.2
 
 ## 配置服务端<br>Config server side
 
@@ -90,8 +90,6 @@ meowdb.db is default database<br>
 Others are Apache Cordova generated
 
 ## 未来开发规划<br>What next
-1. 支持3个设备同时登录<br>
-    Support 3 devices login at once.
 2. 可以通过网页端修改密码<br>
     Change password online.
 3. 一个简单的管理界面<br>
