@@ -1,5 +1,6 @@
 .collection a.collection-item{
     color:#000000;
+    border-bottom:1px solid#000000;
 }
 #search{
     background-color:transparent;
