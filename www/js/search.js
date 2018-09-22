@@ -70,7 +70,7 @@ function flash() {
             ret = "";
         while (now < all) {
             if (list[now+1].toUpperCase().indexOf(document.getElementById("search").value.toUpperCase()) > -1) {
-                ret += '<a href="#" class="collection-item" onclick="ati(' + "'" + list[now] + ')">' + list[now+1] + '</a>'; //信息格式：done、ATID、ATNAME
+                ret += '<a href="#" class="collection-item" onclick="ati(' + "'" + list[now] +"'"+ ')">' + list[now+1] + '</a>'; //信息格式：done、ATID、ATNAME
             }
             now += 2;
         }
@@ -94,6 +94,7 @@ function dialogAlert(message, title, buttonname, callback) { //通知服务
 }
 
 function loc(lo) {
+    
     document.body.addEventListener("animationend", function () {
         document.location = lo;
     }.bind(this))
@@ -113,7 +114,7 @@ var app = {
         }
     },
     ready: function () {
-        if (localStorage.getItem("firstrun") != "0.1.2.2") { //检测是否为第一次运行这个版本，如果是的话跳到初始化页面
+        if (localStorage.getItem("firstrun") != "0.1.3.1") { //检测是否为第一次运行这个版本，如果是的话跳到初始化页面
             loc("firstrun.html")
         }
         else if (!localStorage.getItem("uid")) {
@@ -127,7 +128,7 @@ var app = {
         document.body.style.animation = "showen 0.3s forwards";
         document.getElementById("username1").innerHTML = localStorage.getItem("name");
         document.getElementById("username2").innerHTML = localStorage.getItem("name");
-        if (!localStorage.getItem("helper") && localStorage.getItem("firstrun") == "0.1.2.2") { //弹出帮助
+        if (!localStorage.getItem("helper") && localStorage.getItem("firstrun") == "0.1.3.1") { //弹出帮助
             M.TapTarget.init(document.getElementById('helper'), {}).open();
             localStorage.setItem("helper", "done")
         }

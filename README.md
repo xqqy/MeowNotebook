@@ -2,7 +2,7 @@
 
 就是一个简单的云端笔记本，支持按照标题搜索和多用户管理<br>
 A simple notebook with cloud services, support search by title and mutil-user management.
-V0.1.2.2
+V0.1.3.1
 
 ## 配置服务端<br>Config server side
 
@@ -28,6 +28,8 @@ Create a table named "users",SQL:
 	`TOKEN1`	varchar(255),
 	`TOKEN2`	varchar(255),
 	`TOKEN3`	varchar(255),
+	`KTOKEN`	varchar(255),
+	`OTOKEN`	varchar(255),
 	`USERNAME`	varchar(255) NOT NULL,
 	PRIMARY KEY(`UID`)
 )`<br>
@@ -35,8 +37,8 @@ UID为用户ID，登录使用<br>
 UID is a user id, for login.<br>
 PSWD为使用PHP默认加密的密码，你可以通过password.php生成<br>
 PSWD is this user's password, using default php encrypt. You can get it by password.php<br>
-TOKEN1、TOKEN2、TOKEN3为安全密钥<br>
-TOKEN1、TOKEN2、TOKEN3 is secure password, you needn't to do anything to this.<br>
+TOKEN1、TOKEN2、TOKEN3、KTOKEN、OTOKEN为安全密钥，其中TOKEN1、TOKEN2、TOKEN3用于长时间登录，OTOKEN用于一次性登录，KTOKEN用于Kindle版本登录<br>
+TOKEN1、TOKEN2、TOKEN3、KTOKEN、OTOKEN is secure password,TOKEN1、TOKEN2、TOKEN3 used for long time login, OTOKEN used for one time login, KTOKEN used for Kindle version<br>
 USERNAME为用户名<br>
 USERNAME, is for user's name.<br>
 
@@ -90,6 +92,7 @@ meowdb.db is default database<br>
 Others are Apache Cordova generated
 
 ## 未来开发规划<br>What next
+
 2. 可以通过网页端修改密码<br>
     Change password online.
 3. 一个简单的管理界面<br>

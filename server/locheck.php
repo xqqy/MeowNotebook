@@ -27,10 +27,10 @@ $userdb->exec('CREATE TABLE "users" (
 //创建如果表不存在
 
 
-$user=$userdb->prepare("SELECT `TOKEN1`,`TOKEN2`,`TOKEN3` FROM `users` WHERE UID=?");
+$user=$userdb->prepare("SELECT `TOKEN1`,`TOKEN2`,`TOKEN3`,`KTOKEN`,`OTOKEN` FROM `users` WHERE UID=?");
 if($user->execute(array($_POST['UID']))){
    if($row = $user->fetch()){
-        if(!(hash_equals($_POST['TOKEN'],$row['TOKEN1']) or hash_equals($_POST['TOKEN'],$row['TOKEN2']) or hash_equals($_POST['TOKEN'],$row['TOKEN3']))){
+        if(!(hash_equals($_POST['TOKEN'],$row['TOKEN1']) or hash_equals($_POST['TOKEN'],$row['TOKEN2']) or hash_equals($_POST['TOKEN'],$row['TOKEN3'])or hash_equals($_POST['TOKEN'],$row['KTOKEN'])or hash_equals($_POST['TOKEN'],$row['OTOKEN']))){
             die("登录信息无效，请重新登录");
         }
 

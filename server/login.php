@@ -34,8 +34,20 @@ if($user->execute(array($_POST['UID']))){
    if($row = $user->fetch()){
         if(password_verify($_POST['PSWD'],$row['PSWD'])){//如果密码验证通过则发放TOKEN，并将之前的token向后移动
             $rand=sha1(mt_rand());
-            if(!$userdb->exec("UPDATE `users` SET `TOKEN1`='".$rand."',`TOKEN2`='".$row['TOKEN1']."',`TOKEN3`='".$row['TOKEN2']."' WHERE UID='".$_POST['UID']."'")){
-                die("数据库错误29");
+            if(empty($_POST['LOTYPE'])){
+                if(!$userdb->exec("UPDATE `users` SET `OTOKEN`='".$rand."' WHERE UID='".$_POST['UID']."'")){
+                    die("数据库错误".__LINE__);
+                }
+            }else if($_POST['LOTYPE']=="kindle"){
+                if(!$userdb->exec("UPDATE `users` SET `KTOKEN`='".$rand."' WHERE UID='".$_POST['UID']."'")){
+                    die("数据库错误".__LINE__);
+                }
+            }else if($_POST['LOTYPE']=="saved"){
+                if(!$userdb->exec("UPDATE `users` SET `TOKEN1`='".$rand."',`TOKEN2`='".$row['TOKEN1']."',`TOKEN3`='".$row['TOKEN2']."' WHERE UID='".$_POST['UID']."'")){
+                    die("数据库错误".__LINE__);
+                }
+            }else{
+                die("非法的登陆信息");
             }
             echo "done/meow/".$rand.'/meow/'.$row['USERNAME'];
         }else{

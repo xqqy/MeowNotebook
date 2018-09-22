@@ -29,6 +29,9 @@ function login() { //登录
     var doc = new FormData;
     doc.append("UID", document.getElementById("UID").value);
     doc.append("PSWD", document.getElementById("PSWD").value);
+    if(document.getElementById("remember").checked){
+        doc.append("LOTYPE","saved");
+    }
     req.open("post", localStorage.getItem("server") + "login.php", true);
     req.onreadystatechange = function () {
         if (req.readyState == 4) {
@@ -63,7 +66,7 @@ var app = {
     // Application Constructor
     initialize: function () {
         document.addEventListener('DeviceReady', this.ready.bind(this), false);
-        if (localStorage.getItem("firstrun")!="0.1.2.2") {
+        if (localStorage.getItem("firstrun")!="0.1.3.1") {
             document.location="firstrun.html";
         }
     },
