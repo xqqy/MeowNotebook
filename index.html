@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="libs/materialize.min.css" rel="stylesheet">
+    <link href="basic.css" rel="stylesheet">
+    <link href="libs/gicon.css" rel="stylesheet">
+    <link href="search.css" rel="stylesheet">
+    <script src="basic.js"></script>
+    <script src="cookie.js"></script>
+    <script src="libs/materialize.min.js"></script>
+    <script src="search.js"></script>
+</head>
+
+<body onload="app.ready()">
+    <nav class="black">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">
+                笔记本
+            </a>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a onclick="loc('logout.html')">登出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul id="nav-mobile" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="img/welcome.jpg" onclick="loc('user.html')">
+                </div>
+                <a href="#user" onclick="loc('user.html')">
+                    <img class="circle" src="img/logo.png">
+                </a>
+            </div>
+        </li>
+        <li>
+            <a onclick="loc('logout.html')">登出</a>
+        </li>
+    </ul>
+
+    <i style="font-size: 30px;">搜索</i>
+    <input id="search" type="text" onkeyup="flash()">
+    <div class="nav-content">
+        <div class="collection" id="list">
+            <!--列表-->
+        </div>
+    </div>
+
+    <!--div class="fixed-action-btn active">
+        <a class="waves-effect waves-light btn btn-floating btn-large black" id="menu" onclick="alert('Kindle版暂不支持编辑')"
+            style="font-size: 20px;">
+            新
+        </a>
+    </div-->
+
+</body>

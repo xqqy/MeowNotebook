@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="libs/materialize.min.css" rel="stylesheet">
+    <link href="libs/gicon.css" rel="stylesheet">
+    <link href="basic.css" rel="stylesheet">
+    <link href="ative.css" rel="stylesheet">
+    <script src="basic.js"></script>
+    <script src="cookie.js"></script>
+    <script src="libs/materialize.min.js"></script>
+</head>
+
+<body onload="app.ready()">
+    <nav class="black">
+        <div class="nav-wrapper">
+            <a onclick="loc('index.html')">返回</a>
+            <a href="#" class="brand-logo">
+                笔记详情
+            </a>
+        </div>
+    </nav>
+    <div class="nav-content">
+        <div id="iframe" style="width:100%;border:none"></div>
+        <div id="buttons" class="buttons">
+            <button class="waves-effect waves-light btn black  button" onclick="loc('index.html')">返回</button>
+            <button class="waves-effect waves-light btn black  button" onclick="mob()">修改</button>
+            <button class="waves-effect waves-light btn black  button" onclick="delma()">删除</button>
+        </div>
+    </div>
+</body>
+
+<script src="ative.js"></script>
