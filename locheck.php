@@ -12,6 +12,16 @@ catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
+function tokenchec($data,$post){
+    if(empty($data) or empty($post)){
+        if(empty($post) and empty($data)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    return hash_equals($data,$post);
+}
 function locheck(){
 global $userdb;
 
@@ -30,7 +40,7 @@ $userdb->exec('CREATE TABLE "users" (
 $user=$userdb->prepare("SELECT `TOKEN1`,`TOKEN2`,`TOKEN3`,`KTOKEN`,`OTOKEN` FROM `users` WHERE UID=?");
 if($user->execute(array($_POST['UID']))){
    if($row = $user->fetch()){
-        if(!(hash_equals($_POST['TOKEN'],$row['TOKEN1']) or hash_equals($_POST['TOKEN'],$row['TOKEN2']) or hash_equals($_POST['TOKEN'],$row['TOKEN3'])or hash_equals($_POST['TOKEN'],$row['KTOKEN'])or hash_equals($_POST['TOKEN'],$row['OTOKEN']))){
+        if(!(tokenchec($row['TOKEN1'],$_POST['TOKEN']) or tokenchec($row['TOKEN2'],$_POST['TOKEN']) or tokenchec($row['TOKEN3'],$_POST['TOKEN'])or tokenchec($row['KTOKEN'],$_POST['TOKEN'])or tokenchec($row['OTOKEN'],$_POST['TOKEN']))){
             die("登录信息无效，请重新登录");
         }
 
