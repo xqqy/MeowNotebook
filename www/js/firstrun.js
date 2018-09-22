@@ -1,9 +1,16 @@
-function jump() { //动画跳转
-  localStorage.setItem("loged", "1");
-  document.body.addEventListener("animationend", function () {
-    document.location = "login.html";
-  });
-  document.body.style.animation = "hidden 0.3s forwards";
+function jump() { //检测是否已经登录，如没有，则跳转登录
+  if(localStorage.getItem("loged")){
+    document.body.addEventListener("animationend", function () {
+      document.location = "index.html";
+    });
+    document.body.style.animation = "hidden 0.3s forwards";
+  }else{
+    localStorage.setItem("loged", "1");
+    document.body.addEventListener("animationend", function () {
+      document.location = "login.html";
+    });
+    document.body.style.animation = "hidden 0.3s forwards";
+  }
 }
 function back(index) {
   if (index == 1) {
@@ -20,7 +27,7 @@ var app = {
   ready: function () {
     document.body.style.animation = "showen 0.3s forwards";
     document.addEventListener("backbutton", this.onBackKeyDown.bind(this), false);
-      localStorage.setItem("firstrun", "0.1.3.1");
+      localStorage.setItem("firstrun", "0.1.3.3");
       localStorage.setItem("server", "https://yourserver.com:12345/api/");
     document.getElementById("start").addEventListener("click", jump);
   },
