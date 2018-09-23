@@ -2,7 +2,7 @@
 
 就是一个简单的云端笔记本，支持按照标题搜索和多用户管理<br>
 A simple notebook with cloud services, support search by title and mutil-user management.
-V0.1.3.3
+V0.1.3.4
 
 ## 配置服务端<br>Config server side
 

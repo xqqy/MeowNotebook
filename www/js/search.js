@@ -114,7 +114,10 @@ var app = {
         }
     },
     ready: function () {
-        var ver="0.1.3.3".split(".")[0]+"."+"0.1.3.3".split(".")[1]+"."+"0.1.3.3".split(".")[2]+"."+localStorage.getItem("firstrun").split(".")[3]
+        if(!localStorage.getItem("firstrun")){
+            loc("firstrun.html")
+        }
+        var ver="0.1.3.4".split(".")[0]+"."+"0.1.3.4".split(".")[1]+"."+"0.1.3.4".split(".")[2]+"."+localStorage.getItem("firstrun").split(".")[3]
         if (localStorage.getItem("firstrun") != ver) { //检测是否为第一次运行这个版本(bug修复版本除外)，如果是的话跳到初始化页面
             loc("firstrun.html")
         }
