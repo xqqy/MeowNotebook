@@ -7,17 +7,13 @@ worker.onmessage = function (e) {
 }
 
 function getRootPath_dc() {//获取安装目录,通过协议检测是否为安卓平台
-    if (window.location.protocol=="file:"){
-        return "file:///android_asset/www"
-    }else{
         var pathName = window.location.pathname.substring(1);
-        var webName = pathName == '' ? '' : pathName.substring(0, pathName.indexOf('/'));
+        var webName = pathName == '' ? '' : pathName.substring(0, pathName.lastIndexOf('/'));
         if (webName == "") {
             return window.location.protocol + '//' + window.location.host;
         }
         else {
             return window.location.protocol + '//' + window.location.host + '/' + webName;
-        }
     }
 }
 
@@ -117,7 +113,7 @@ var app = {
         if(!localStorage.getItem("firstrun")){
             loc("firstrun.html")
         }
-        var ver="0.1.3.4".split(".")[0]+"."+"0.1.3.4".split(".")[1]+"."+"0.1.3.4".split(".")[2]+"."+localStorage.getItem("firstrun").split(".")[3]
+        var ver="1.0.0.0".split(".")[0]+"."+"1.0.0.0".split(".")[1]+"."+"1.0.0.0".split(".")[2]+"."+localStorage.getItem("firstrun").split(".")[3]
         if (localStorage.getItem("firstrun") != ver) { //检测是否为第一次运行这个版本(bug修复版本除外)，如果是的话跳到初始化页面
             loc("firstrun.html")
         }

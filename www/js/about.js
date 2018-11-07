@@ -11,7 +11,7 @@ var app = {
 	onBackKeyDown: function (e) {
 		document.body.addEventListener("animationend", function () {
 			if(localStorage.getItem("uid")){
-				document.location = "index.html";
+				document.location = "setting.html";
 			}else{
 				document.location="firstrun.html"
 			}

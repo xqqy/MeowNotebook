@@ -1,4 +1,7 @@
-<script>localStorage.removeItem("uid");
-localStorage.removeItem("offline");
-localStorage.removeItem("token");
-document.location="login.html"</script>
+<script>
+localStorage.clear();
+localStorage.setItem("firstrun", "1.0.0.0");
+localStorage.setItem("server", "https://yourserver.com:12345/api/");
+localStorage.setItem("helper", "done")
+document.location="login.html"
+</script>

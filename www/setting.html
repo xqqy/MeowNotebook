@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="libs/materialize.min.css" rel="stylesheet">
+    <link href="libs/gicon.css" rel="stylesheet">
+    <link href="css/setting.css" rel="stylesheet">
+    <link href="css/basic.css" rel="stylesheet">
+    <script src="cordova.js"></script>
+    <script src="js/setting.js"></script>
+    <title>设置</title>
+</head>
+
+<body>
+    <nav class="nav-extended light-blue">
+        <div class="nav-wrapper">
+            <span style="font-size: 30px;line-height: 2" class="material-icons" onclick="app.onBackKeyDown()">arrow_back</span>
+            <a href="#" class="brand-logo">
+                设置
+            </a>
+        </div>
+    </nav>
+    <div class="nav-content">
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card hoverable">
+                    <div class="card-content"><span class="card-title">登录信息</span>
+                        <p>你的用户名是<span id="username"></span></p>
+                    </div>
+                    <div class="card-action">
+                        <a class="modal-trigger" href="#modal1">更改用户名</a>
+                        <a class="modal-trigger" href="#modal2">更改密码</a>
+                        <!--<a href="#" onclick="">销毁账户</a>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card hoverable">
+                    <div class="card-content"><span class="card-title">程序信息</span>
+                        <p>版本号：1.0.0.0</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" onclick="loc('about.html')">关于</a>
+                        <a href="#" onclick="clearall()">清除信息</a>
+                        <!--<a href="#" onclick="">销毁账户</a>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card hoverable">
+                    <div class="card-content"><span class="card-title">启用编辑器自适应模式</span>
+                        <p>这可以让编辑器在屏幕大小变化时自动适应。但也会在手机上造成糟糕的输入体验</p>
+                    </div>
+                    <div class="card-action">
+                        <a id="editorac" onclick="editor()"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>用户名更改</h4>
+            <p>在此输入你的新用户名，你将从所有设备登出</p>
+            <input id="nname" type="text" class="validate" required="1">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="waves-effect waves-green btn-flat" onclick="namechange()">确定</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">取消</a>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>密码更改</h4>
+            <p>你将从所有设备登出</p>
+            <div class="input-field col s6">
+                <input id="opswd" type="password" class="validate" required="1">
+                <label for="opswd">输入旧密码</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="npswd" type="password" class="validate" required="1">
+                <label for="npswd">输入新密码</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="rpswd" type="password" class="validate" required="1">
+                <label for="rpswd">重复新密码</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="waves-effect waves-green btn-flat" onclick="pswdchange()">确定</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">取消</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

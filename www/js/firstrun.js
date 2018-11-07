@@ -27,7 +27,7 @@ var app = {
   ready: function () {
     document.body.style.animation = "showen 0.3s forwards";
     document.addEventListener("backbutton", this.onBackKeyDown.bind(this), false);
-      localStorage.setItem("firstrun", "0.1.3.4");
+      localStorage.setItem("firstrun", "1.0.0.0");
       localStorage.setItem("server", "https://yourserver.com:12345/api/");
     document.getElementById("start").addEventListener("click", jump);
   },

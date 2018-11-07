@@ -9,6 +9,16 @@ var app = {
 		}
 		document.addEventListener("backbutton", this.onBackKeyDown.bind(this), false);
 		document.body.style.animation = "showen 0.3s forwards";
+		window.onresize=function(){
+			if(localStorage.getItem("editoronresize")){
+				$('#summernote').summernote("destroy");
+				$('#summernote').summernote({
+					placeholder: '喵～',
+					lang: 'zh-CN',
+					height: window.innerHeight - 310
+				});
+			}
+		}.bind(this)
 		$('#summernote').summernote({
 			placeholder: '喵～',
 			lang: 'zh-CN',

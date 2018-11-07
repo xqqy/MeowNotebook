@@ -2,7 +2,7 @@
 
 就是一个简单的云端笔记本，支持按照标题搜索和多用户管理<br>
 A simple notebook with cloud services, support search by title and mutil-user management.
-V0.1.3.4
+V1.0.0.0
 
 ## 配置服务端<br>Config server side
 
@@ -93,7 +93,5 @@ Others are Apache Cordova generated
 
 ## 未来开发规划<br>What next
 
-2. 可以通过网页端修改密码<br>
-    Change password online.
 3. 一个简单的管理界面<br>
     A simple management.
